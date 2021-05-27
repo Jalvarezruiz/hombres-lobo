@@ -8,22 +8,10 @@ radio.onReceivedNumber(function (receivedNumber) {
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     basic.showNumber(personaje)
-    if (personaje == 1) {
-        basic.showLeds(`
-            # . . . .
-            # . . . .
-            # . . . .
-            # . . . .
-            # # # # .
-            `)
+    if (personaje < 4) {
+        basic.showString("LOBO")
     } else {
-        basic.showLeds(`
-            # # # . .
-            # . . # .
-            # # # . .
-            # . . . .
-            # . . . .
-            `)
+        basic.showString("GENTE")
     }
 })
 input.onButtonPressed(Button.A, function () {
@@ -60,19 +48,7 @@ contador = 3
 personaje = randint(1, 20)
 basic.showNumber(personaje)
 if (personaje < 4) {
-    basic.showLeds(`
-        # . . . .
-        # . . . .
-        # . . . .
-        # . . . .
-        # # # # .
-        `)
+    basic.showString("LOBO")
 } else {
-    basic.showLeds(`
-        # # # . .
-        # . . # .
-        # # # . .
-        # . . . .
-        # . . . .
-        `)
+    basic.showString("GENTE")
 }
